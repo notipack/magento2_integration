@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="notipack_integration" translate="label" sortOrder="10">
+            <label>Notipack</label>
+        </tab>
+        <section id="notipack" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Ustawienia</label>
+            <tab>notipack_integration</tab>
+            <resource>Notipack_Integration::main</resource>
+            <group id="main" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="api_key" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Klucz api</label>
+                    <comment>Moduł nie będzie działał w przypadku złego klucza.</comment>
+                    <validate>no-whitespace</validate>
+                    <backend_model>Notipack\Integration\Model\Config\Backend\ApiKey</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

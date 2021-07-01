@@ -1,0 +1,6 @@
+<?php
+/* @var $this Notipack\Integration\Block\Pixel */
+if ($this->isActive()): ?>
+<script async src="https://app.notipack.com/pixel/<?php echo $this->getPixelCode(); ?>"></script>
+<?php
+endif;
