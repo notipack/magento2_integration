@@ -30,7 +30,9 @@ class SendOrderData implements ObserverInterface
                     'thumbnail' => $product->getMediaGalleryImages()->getFirstItem()->getData('url'),
                     'buyer_name' => $order->getBillingAddress()->getFirstname(),
                     'product_name' => $product->getName(),
-                    'product_link' => $product->getProductUrl()
+                    'product_link' => $product->getProductUrl(),
+                    'city' => $order->getBillingAddress()->getCity(),
+                    'country' => $order->getBillingAddress()->getCountryId()
                 ];
                 foreach ($urls as $url) {
                     if ($url['type'] === 'LATEST_CONVERSION') {
